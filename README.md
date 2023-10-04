@@ -60,3 +60,7 @@ time step index: 47
 4.118562e-09 1.0147082 8.584162e-05
 ```
 
+
+## Notes
+
+You might notice the box2dTypeConvert C++ module. This exists to handle the type conversions between parent and child types in the C++ hierarchy and to work around bugs. It is what it is. 
