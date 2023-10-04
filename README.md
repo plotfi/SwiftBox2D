@@ -19,7 +19,7 @@ I put my homebrew in ~/opt/homebrew because I really dislike how homebrew modifi
 
 Anyhow, I set mine to `export BREWDIR=$HOME/opt/homebrew`, set yours however you'd like.
 
-## Steps 4, annotate types as reference types as needed:
+## Steps 4, annotate types as reference types as needed, also copy module.modulemap files:
 
 At this point, for this particular library one of our libraries has to be a reference type.
 Ideally you'd want to wire up ARC but here we are going to use immortal foreign references for brevity.
@@ -35,6 +35,20 @@ public:
 	/// to set some fixture parameters, like friction. Otherwise you can create the
 	/// fixture directly from a shape.
 ```
+
+You also need to modularize C++ libraries you wish to use from Swift. There is an existing modulemap file at `box2d-modifications/module.modulemap` in the cloned repository with the contents:
+
+```
+module box2d {
+  header "box2d/box2d.h"
+  requires cplusplus
+  export *
+}
+```
+
+copy it to the include dir in your homebrew setup like so:
+
+`cp box2d-modifications/module.modulemap $BREWDIR/include`
 
 ## Step 5, build and run:
 
