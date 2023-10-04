@@ -1,0 +1,5 @@
+module box2d {
+  header "box2d/box2d.h"
+  requires cplusplus
+  export *
+}

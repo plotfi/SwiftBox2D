@@ -1,0 +1,10 @@
+127,131d126
+< #define IMMORTAL_REF                                \
+<      __attribute__((swift_attr("import_as_ref")))   \
+<      __attribute__((swift_attr("retain:immortal"))) \
+<      __attribute__((swift_attr("release:immortal")))
+< 
+133c128
+< class B2_API IMMORTAL_REF b2Body
+---
+> class B2_API b2Body

@@ -1,0 +1,5 @@
+module box2dTypeConvert {
+  header "box2dTypeConvert.h"
+  requires cplusplus
+  export *
+}
