@@ -21,7 +21,7 @@ Anyhow, I set mine to `export BREWDIR=$HOME/opt/homebrew`, set yours however you
 
 ## Steps 4, annotate types as reference types as needed, also copy module.modulemap files:
 
-At this point, for this particular library one of our libraries has to be a reference type.
+At this point, for this particular library one of the class/struct types has to be a reference type.
 Ideally you'd want to wire up ARC but here we are going to use immortal foreign references for brevity.
 
 All you'll need to do is modify the line `class B2_API b2Body` at `$BREWDIR/Cellar/box2d/2.4.1/include/box2d/b2_body.h` to `class B2_API IMMORTAL_REF b2Body` so that it looks like so:
